@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="o-wrap c-calc">
+        <div class="c-calc__display"></div>
+
+        <div class="c-calc__values">
+            <div class="c-calc_values__item">
+                <textarea name="value" id="value1" cols="30" rows="1"></textarea>
+                <label for="value1">Current Result</label>
+            </div>
+            <div class="c-calc_values__item">
+                <textarea name="operator" id="operator" cols="30" rows="1"></textarea>
+                <label for="operator">Operator</label>
+            </div>
+            <div class="c-calc_values__item">
+                <textarea name="value" id="value2" cols="30" rows="1"></textarea>
+                <label for="value2">Second Value</label>
+            </div>
+        </div>
+
+        <div class="c-calc__wrapper">
+            <div class="c-calc__wrapper__number">
+                <button type="button" class="c-calc__wrapper__number__item" data-item="0">0</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="1">1</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="2">2</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="3">3</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="4">4</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="5">5</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="6">6</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="7">7</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="8">8</button>
+                <button type="button" class="c-calc__wrapper__number__item" data-item="9">9</button>
+                <button type="button" class="c-calc__wrapper__number__decimal" data-item=".">.</button>
+                <button type="button" class="c-calc__wrapper__number__backspace" data-item="backspace"><--</button>
+                <button type="button" class="c-calc__wrapper__number__clear" data-item="clear">Clear</button>
+                <button type="button" class="c-calc__wrapper__number__equals" data-item="equals">=</button>
+            </div>
+            <div class="c-calc__wrapper__operator">
+                <button type="button" class="c-calc__wrapper__operator__item" data-operator="add">+</button>
+                <button type="button" class="c-calc__wrapper__operator__item" data-operator="substract">-</button>
+                <button type="button" class="c-calc__wrapper__operator__item" data-operator="multiply">*</button>
+                <button type="button" class="c-calc__wrapper__operator__item" data-operator="divide">/</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

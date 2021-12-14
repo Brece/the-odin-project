@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <form class="c-form">
+        <label for="title" class="c-form__label">Book Title:</label>
+        <input type="text" id="title" class="c-form__input"><br><br>
+        <label for="author" class="c-form__label">Author:</label>
+        <input type="text" id="author" class="c-form__input"><br><br>
+        <label for="pages" class="c-form__label">Number of Pages:</label>
+        <input type="text" id="pages" class="c-form__input"><br><br>
+        <label for="isRead">Aleady read:</label>
+        <select id="isRead">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select><br><br>
+        <button type="submit" id="submit" class="c-form__btn">New Book</button>
+    </form>
+
+    <h1 class="c-header">Library:</h1>
+    <section class="c-library">
+
+        <!-- <div class=" c-library__item">
+            <p>Title:</p>
+            <p>Author:</p>
+            <p>Pages:</p>
+            <button type="button" class="c-library__item__delete-btn">Delete</button>
+            <button type="button" class="c-library__item__read-btn is-read">Read</button>
+        </div> -->
+
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

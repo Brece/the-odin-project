@@ -1,0 +1,49 @@
+.c-form, .c-library {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.c-form__label {
+  display: inline-block;
+  width: 200px;
+}
+
+.c-form__input {
+  display: inline-block;
+  width: 400px;
+}
+
+.c-form__btn {
+  padding: 5px 10px;
+  background-color: green;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.c-header {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.c-library__item {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: yellow;
+}
+
+.c-library__item__delete-btn, .c-library__item__read-btn {
+  padding: 5px 10px;
+  background-color: red;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.is-read {
+  background-color: greenyellow;
+}
+/*# sourceMappingURL=main.css.map */
