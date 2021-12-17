@@ -1,2 +1,2 @@
 Source:
-https://webpack.js.org/concepts/
+https://webpack.js.org/guides/getting-started/
