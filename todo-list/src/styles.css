@@ -1,1 +1,16 @@
 @import "reset.css";
+
+:root {
+    --font-size: 16px;
+    --font-size-medium: 20px;
+    --hspace: 20px;
+    --vspace: 20px;
+}
+
+.o-wrap { max-width: 700px; margin: calc(var(--vspace) * 3) auto 0; background-color: red; }
+
+.c-form { border: 1px solid #000; border-radius: 5px; }
+.c-form legend { padding-top: calc(var(--vspace) / 2); font-size: var(--font-size-medium); font-weight: bold; }
+.c-form label { font-weight: bold; }
+.c-form input { margin-right: var(--hspace); }
+.c-form__field { padding: var(--vspace) var(--hspace); }
