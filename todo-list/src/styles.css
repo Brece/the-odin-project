@@ -7,10 +7,15 @@
     --vspace: 20px;
 }
 
-.o-wrap { max-width: 700px; margin: calc(var(--vspace) * 3) auto 0; background-color: red; }
+.o-wrap { max-width: 700px; margin: calc(var(--vspace) * 3) auto 0; }
 
-.c-form { border: 1px solid #000; border-radius: 5px; }
-.c-form legend { padding-top: calc(var(--vspace) / 2); font-size: var(--font-size-medium); font-weight: bold; }
-.c-form label { font-weight: bold; }
-.c-form input { margin-right: var(--hspace); }
-.c-form__field { padding: var(--vspace) var(--hspace); }
+.c-form { margin-bottom: calc(var(--vspace) * 2); border: 1px solid #000; border-radius: 5px; background-color: beige; }
+.c-form__field { display: flex; flex-direction: column; padding: var(--vspace) var(--hspace); }
+.c-form__field legend { padding-top: calc(var(--vspace) / 2); font-size: var(--font-size-medium); font-weight: bold; }
+.c-form__field__container { width: 100%; margin-bottom: calc(var(--vspace) / 2) }
+.c-form__field label { display: inline-block; width: calc(25% - var(--hspace)); margin-right: var(--hspace); font-weight: bold; vertical-align: top; }
+.c-form__field input, .c-form__field textarea { width: calc(75% - var(--hspace)); }
+.c-form__field__btn { width: 25%; }
+
+.c-list { padding: var(--vspace) var(--hspace); border: 1px solid #000; border-radius: 5px; background-color: bisque; }
+.c-list__headline { margin-bottom: var(--vspace); font-size: var(--font-size-medium); font-weight: bold; }
