@@ -1,15 +1,15 @@
 import "./styles.css";
 import * as _ from "date-fns";
-import { initDOM } from "./template-module";
+import { initDOM, initProjects } from "./template-module";
 import { initEvents, loadLocalStorage } from "./localStorage-module";
 //import { todo } from "./todo-module";
 
-// console.log(todo("xxx", "aaa", "gweg", "2121.3.1", "low"));
 
 document.addEventListener("DOMContentLoaded", function() {
+    let projects = loadLocalStorage();
     initDOM();
     initEvents();
-    loadLocalStorage();
-});
+    initProjects(projects);
 
-// console.log(JSON.parse(localStorage.getItem("xxx")));
+    // console.log(projects);
+});

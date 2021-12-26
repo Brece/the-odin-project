@@ -40,4 +40,24 @@ function initDOM () {
     document.getElementsByTagName("body")[0].appendChild(input);
 }
 
-export { initDOM };
+function initProjects(arrayObj) {
+    const list = document.querySelector(".c-list");
+
+    arrayObj.forEach(project => {
+        let todoProperties = "";
+
+        for(let property in project.value) {
+            todoProperties += `<li class="c-list__item__todo__property">${property}: ${project.value[property]}</li>`;
+        }
+
+        let card = document.createElement("div");
+        card.classList.add("c-list__item");
+        card.innerHTML = `<h3 class="c-list__item__title">${project.key}</h3>
+            <ul class="c-list__item__todo">${todoProperties}</ul>
+            <button type="button" class="c-list__item__btn">Edit Task</button>`;
+        
+        list.appendChild(card);
+    });
+}
+
+export { initDOM, initProjects };
