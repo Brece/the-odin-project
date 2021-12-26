@@ -1,7 +1,7 @@
 import "./styles.css";
 import * as _ from "date-fns";
 import { initDOM } from "./template-module";
-import { initEvents } from "./localStorage-module";
+import { initEvents, loadLocalStorage } from "./localStorage-module";
 //import { todo } from "./todo-module";
 
 // console.log(todo("xxx", "aaa", "gweg", "2121.3.1", "low"));
@@ -9,6 +9,7 @@ import { initEvents } from "./localStorage-module";
 document.addEventListener("DOMContentLoaded", function() {
     initDOM();
     initEvents();
+    loadLocalStorage();
 });
 
-console.log(JSON.parse(localStorage.getItem("xxx")));
+// console.log(JSON.parse(localStorage.getItem("xxx")));

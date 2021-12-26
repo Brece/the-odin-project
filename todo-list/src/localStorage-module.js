@@ -33,17 +33,27 @@ function _addTodo(item) {
     localStorage.setItem(item.key, JSON.stringify(item.value));
 }
 
-function loadLocalStorage() {
+function addProject(project) {
+    JSON.stringify(localStorage.setItem(project, []));
+}
 
+function loadLocalStorage() {
+    if(localStorage.length !== 0) {
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            if (!localStorage.hasOwnProperty(key)) {
+                continue; // skip keys like "setItem", "getItem" etc
+            }
+            console.log({key : key, value : JSON.parse(localStorage.getItem(key))})
+        }
+    }
 }
 
 function deleteTodo(todo) {
 
 }
 
-function addProject(project) {
-    JSON.stringify(localStorage.setItem(project, []));
-}
+
 
 function getProject(project) {
 
@@ -57,4 +67,4 @@ function _clearLocalStorage() {
     localStorage.clear();
 }
 
-export { initEvents }
+export { initEvents, loadLocalStorage }
