@@ -5,6 +5,8 @@ const _todoObj = todo;
 function initEvents() {
     _submitBtn();
     _clearBtn();
+    _deleteBtn();
+    _editBtn();
 }
 
 function _submitBtn() {
@@ -18,19 +20,42 @@ function _submitBtn() {
     form.addEventListener("submit", function() {
         let item = { key:project.value, value:_todoObj(project.value, todo.value, desc.value, date.value, priority.value) };
         _addTodo(item);
-        project.value = "";
-        todo.value = "";
-        desc.value = "";
+        location.reload();
     });
 }
 
 function _clearBtn() {
     const btn = document.querySelector(".c-list__btn");
-    btn.addEventListener("click", _clearLocalStorage);
+    btn.addEventListener("click", function() {
+        _clearLocalStorage();
+        location.reload();
+    }); 
+}
+
+function _deleteBtn() {
+    const btn = document.querySelectorAll(".c-list__item__todo__deleteBtn");
+    btn.forEach(el => el.addEventListener("click", function(e){
+        _deleteTodo(e);
+        location.reload();}));
+}
+
+function _editBtn() {
+    const btn = document.querySelectorAll(".c-list__item__todo__editBtn");
+    btn.forEach(el => el.addEventListener("click", function(e) {
+        _editTodo(e);
+        location.reload();}));
 }
 
 function _addTodo(item) {
-    localStorage.setItem(item.key, JSON.stringify(item.value));
+    for(let i = 0; i < localStorage.length; i++) {
+        if(localStorage.key(i) === item.key){
+            let todos = JSON.parse(localStorage.getItem(item.key));
+            todos.push(item.value);
+            localStorage.setItem(item.key, JSON.stringify(todos));
+            return;
+        }
+    }
+    localStorage.setItem(item.key, JSON.stringify(new Array(item.value)));
 }
 
 function addProject(project) {
@@ -52,11 +77,20 @@ function loadLocalStorage() {
     return projects;
 }
 
-function deleteTodo(todo) {
-
+function _deleteTodo(e) {
+    let project = e.target.dataset.project;
+    let todos = JSON.parse(localStorage.getItem(project));
+    let currentTodos = todos.filter(el => el.todo !== e.target.dataset.todo);
+    if(currentTodos.length === 0) {
+        localStorage.removeItem(project);
+    } else {
+        localStorage.setItem(project, JSON.stringify(currentTodos));
+    }
 }
 
+function _editTodo() {
 
+}
 
 function getProject(project) {
 

@@ -18,10 +18,16 @@
 .c-form__field__btn { width: 25%; }
 
 .c-list { padding: var(--vspace) var(--hspace); border: 1px solid #000; border-radius: 5px; background-color: bisque; }
+.c-list__btn { background-color: rgb(255, 207, 117); border: 1px solid #000; border-radius: 3px; }
+.c-list__btn:hover { cursor: pointer; background-color: orange; }
 .c-list__headline { margin-bottom: var(--vspace); font-size: var(--font-size-medium); font-weight: bold; }
 
 .c-list__item { margin: 20px 0px; padding: 10px 10px; border: 1px solid #000; border-radius: 3px; background-color: #fffff0; text-transform: capitalize; }
 .c-list__item__title { font-weight: bold; margin-bottom: calc(var(--vspace) / 2);}
 /* .c-list__item__todo {} */
-.c-list__item__todo__property { line-height: 1.5; }
-/* .c-list__item__btn {} */
+.c-list__item__todo__card { margin: calc(var(--hspace) / 2) 0; padding: calc(var(--vspace) / 4) calc(var(--hspace) / 4); border: 1px solid #000; border-radius: 3px; }
+.c-list__item__todo__card__property { line-height: 1.5; }
+.c-list__item__todo__editBtn { background-color: rgb(161, 255, 161); border: 1px solid #000; border-radius: 3px; }
+.c-list__item__todo__deleteBtn { background-color: rgb(253, 131, 131); border: 1px solid #000; border-radius: 3px; }
+.c-list__item__todo__editBtn:hover { cursor: pointer; background-color: rgb(0, 255, 0); }
+.c-list__item__todo__deleteBtn:hover { cursor: pointer; background-color: red; }

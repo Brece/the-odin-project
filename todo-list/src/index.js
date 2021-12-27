@@ -8,8 +8,6 @@ import { initEvents, loadLocalStorage } from "./localStorage-module";
 document.addEventListener("DOMContentLoaded", function() {
     let projects = loadLocalStorage();
     initDOM();
-    initEvents();
     initProjects(projects);
-
-    // console.log(projects);
+    initEvents();
 });

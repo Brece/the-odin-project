@@ -44,19 +44,25 @@ function initProjects(arrayObj) {
     const list = document.querySelector(".c-list");
 
     arrayObj.forEach(project => {
+        let todos = "";
         let todoProperties = "";
-
-        for(let property in project.value) {
-            todoProperties += `<li class="c-list__item__todo__property">${property}: ${project.value[property]}</li>`;
+        for(let i = 0; i < project.value.length; i++) {
+            let currentTodo = project.value[i];
+            for(let property in currentTodo) {
+                todoProperties += `<li class="c-list__item__todo__card__property">${property}: ${currentTodo[property]}</li>`;
+            }
+            todos += `<ul class="c-list__item__todo__card">${todoProperties}</ul>
+                <button type="button" class="c-list__item__todo__editBtn" data-project="${currentTodo["project"]}" data-todo="${currentTodo["todo"]}">Edit Task</button>
+                <button type="button" class="c-list__item__todo__deleteBtn" data-project="${currentTodo["project"]}" data-todo="${currentTodo["todo"]}">Delete Task</button>`;
+            todoProperties = "";
         }
 
-        let card = document.createElement("div");
-        card.classList.add("c-list__item");
-        card.innerHTML = `<h3 class="c-list__item__title">${project.key}</h3>
-            <ul class="c-list__item__todo">${todoProperties}</ul>
-            <button type="button" class="c-list__item__btn">Edit Task</button>`;
+        let projectCard = document.createElement("div");
+        projectCard.classList.add("c-list__item");
+        projectCard.innerHTML = `<h3 class="c-list__item__title">${project.key}</h3>
+            <div class="c-list__item__todo">${todos}</div>`;
         
-        list.appendChild(card);
+        list.appendChild(projectCard);
     });
 }
 
