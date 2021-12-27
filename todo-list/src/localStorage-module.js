@@ -3,10 +3,16 @@ import { todo } from "./todo-module";
 const _todoObj = todo;
 
 function initEvents() {
+    _addBtn();
     _submitBtn();
     _clearBtn();
     _deleteBtn();
     _editBtn();
+}
+
+function _addBtn() {
+    const btn = document.querySelector(".c-addBtn");
+    btn.addEventListener("click", _activateForm);
 }
 
 function _submitBtn() {
@@ -36,14 +42,23 @@ function _deleteBtn() {
     const btn = document.querySelectorAll(".c-list__item__todo__deleteBtn");
     btn.forEach(el => el.addEventListener("click", function(e){
         _deleteTodo(e);
-        location.reload();}));
+        location.reload();
+    }));
 }
 
 function _editBtn() {
     const btn = document.querySelectorAll(".c-list__item__todo__editBtn");
     btn.forEach(el => el.addEventListener("click", function(e) {
         _editTodo(e);
-        location.reload();}));
+        location.reload();
+    }));
+}
+
+function _activateForm() {
+    const form = document.querySelector(".c-form");
+    const body = document.querySelector("body");
+    body.classList.add("isBlurred");
+    form.classList.add("isActive");
 }
 
 function _addTodo(item) {

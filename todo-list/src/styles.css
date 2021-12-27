@@ -7,9 +7,17 @@
     --vspace: 20px;
 }
 
+/* body::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; } */
+body { transition: all .5s ease-in-out; }
+body.isBlurred { filter: blur(2px); position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+
 .o-wrap { max-width: 700px; margin: calc(var(--vspace) * 3) auto 0; }
 
-.c-form { margin-bottom: calc(var(--vspace) * 2); border: 1px solid #000; border-radius: 5px; background-color: beige; }
+.c-addBtn { margin-bottom: 50px; padding: var(--vspace) var(--hspace); font-weight: bold; font-size: var(--font-size-medium); text-transform: uppercase; background-color: greenyellow; border: 1px solid #000; border-radius: 3px; }
+.c-addBtn:hover { cursor: pointer; }
+
+.c-form { margin-bottom: calc(var(--vspace) * 2); border: 1px solid #000; border-radius: 5px; background-color: beige; visibility: hidden; opacity: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 5; transition: all .5s ease-in-out; }
+.c-form.isActive { visibility: visible; opacity: 1; }
 .c-form__field { display: flex; flex-direction: column; padding: var(--vspace) var(--hspace); }
 .c-form__field legend { padding-top: calc(var(--vspace) / 2); font-size: var(--font-size-medium); font-weight: bold; }
 .c-form__field__container { width: 100%; margin-bottom: calc(var(--vspace) / 2) }

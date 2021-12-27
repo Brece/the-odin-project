@@ -1,7 +1,7 @@
 function initDOM () {
     const input = document.createElement("div");
     input.classList.add("o-wrap");
-    input.innerHTML = `
+    input.innerHTML = `<button type="button" class="c-addBtn">Add Task</button>
             <form action="#" class="c-form">
                 <fieldset class="c-form__field">
                     <legend>Add new Todo</legend>
@@ -32,7 +32,7 @@ function initDOM () {
                     <button type="submit" class="c-form__field__btn">Add Todo</button>
                 </fieldset>
             </form>
-            
+
             <div class="c-list">
                 <h2 class="c-list__headline">Current Tasks:</h2>
                 <button type="button" class="c-list__btn">Delete all tasks</button>
