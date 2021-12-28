@@ -24,7 +24,7 @@ function _submitBtn() {
     const priority = document.querySelector("#priority");
 
     form.addEventListener("submit", function() {
-        let item = { key:project.value, value:_todoObj(project.value, todo.value, desc.value, date.value, priority.value) };
+        let item = _todoObj(project.value, todo.value, desc.value, date.value, priority.value);
         _addTodo(item);
         location.reload();
     });
@@ -50,7 +50,6 @@ function _editBtn() {
     const btn = document.querySelectorAll(".c-list__item__todo__editBtn");
     btn.forEach(el => el.addEventListener("click", function(e) {
         _editTodo(e);
-        location.reload();
     }));
 }
 
@@ -63,14 +62,14 @@ function _activateForm() {
 
 function _addTodo(item) {
     for(let i = 0; i < localStorage.length; i++) {
-        if(localStorage.key(i) === item.key){
-            let todos = JSON.parse(localStorage.getItem(item.key));
-            todos.push(item.value);
-            localStorage.setItem(item.key, JSON.stringify(todos));
+        if(localStorage.key(i) === item.project){
+            let todos = JSON.parse(localStorage.getItem(item.project));
+            todos.push(item);
+            localStorage.setItem(item.project, JSON.stringify(todos));
             return;
         }
     }
-    localStorage.setItem(item.key, JSON.stringify(new Array(item.value)));
+    localStorage.setItem(item.project, JSON.stringify(new Array(item)));
 }
 
 function addProject(project) {
@@ -103,16 +102,35 @@ function _deleteTodo(e) {
     }
 }
 
-function _editTodo() {
-
+function _formActive() {
+    const form = document.querySelector(".c-form");
+    form.classList.add("isActive");
+    // blur background
 }
 
-function getProject(project) {
+function _editTodo(e) {
+    _formActive();
+    let project = e.target.dataset.project;
+    let todo = e.target.dataset.todo;
+    let todoArray = JSON.parse(localStorage.getItem(project));
 
-}
+    for(let i = 0; 0 < todoArray.length; i++) {
+        let item = todoArray[i];
 
-function deleteProject(project) {
+        if(item.todo === todo) {
+            document.querySelector("#project").value = item.project;
+            document.querySelector("#todo").value = item.todo;
+            document.querySelector("#desc").value = item.description;
+            document.querySelector("#date").value = item.dueDate;
+            document.querySelector("#priority").value = item.priority;
 
+            todoArray.splice(i, 1);
+            localStorage.setItem(project, JSON.stringify(todoArray));
+            break;
+        }
+    }
+    
+    
 }
 
 function _clearLocalStorage() {
