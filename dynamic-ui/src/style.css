@@ -64,7 +64,7 @@ body {
   background-color: #98ccf9;
 }
 
-.c-headline {
+.c-header__headline {
   position: absolute;
   left: 60px;
   top: 20px;
@@ -73,14 +73,14 @@ body {
   color: #fff;
 }
 
-.c-navbar {
+.c-header__navbar {
   max-width: 600px;
   height: 20px;
   margin: 0 auto;
   padding: 20px 40px;
 }
 
-.c-navbar__section {
+.c-header__navbar__section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,7 +88,7 @@ body {
       flex-wrap: wrap;
 }
 
-.c-navbar__section__item {
+.c-header__navbar__section__item {
   width: calc(20% - 20px*2);
   position: relative;
   margin: 0 10px;
@@ -101,11 +101,15 @@ body {
   transition: background-color .5s ease-in-out;
 }
 
-.c-navbar__section__item:hover {
+.c-header__navbar__section__item:hover {
   background-color: #f9f398;
 }
 
-.c-navbar__section__item:hover .c-navbar__section__item__sub {
+.c-header__navbar__section__item.isActive {
+  background-color: #f9f398;
+}
+
+.c-header__navbar__section__item:hover .c-header__navbar__section__item__sub {
   position: relative;
   -webkit-transform: translate(0, 10px);
           transform: translate(0, 10px);
@@ -113,7 +117,7 @@ body {
   visibility: visible;
 }
 
-.c-navbar__section__item__sub {
+.c-header__navbar__section__item__sub {
   position: absolute;
   margin-bottom: 10px;
   opacity: 0;
@@ -123,17 +127,32 @@ body {
   transition: all .3s ease-in-out;
 }
 
-.c-navbar__section__item__sub__link {
+.c-header__navbar__section__item__sub.isVisible {
+  position: relative;
+  -webkit-transform: translate(0, 10px);
+          transform: translate(0, 10px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-header__navbar__section__item__sub__link {
   margin-bottom: 5px;
 }
 
-.c-navbar__section__item__sub__link a {
+.c-header__navbar__section__item__sub__link a {
   letter-spacing: 0;
   color: #000;
   text-decoration: none;
 }
 
-.c-navbar__section__item__sub__link a:hover {
+.c-header__navbar__section__item__sub__link a:hover {
   color: blue;
+}
+
+.c-header__btn {
+  display: inline-block;
+  position: absolute;
+  right: 60px;
+  top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

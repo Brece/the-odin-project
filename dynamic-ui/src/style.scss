@@ -13,17 +13,20 @@ body { box-sizing: border-box; }
 
 #header { position: relative; width: 100%; height: 60px; background-color: #98ccf9; }
 
-.c-headline { position: absolute; left: $hspace*3; top: $vspace; font-size: $font-size-xlarge; font-weight: bold; color: #fff; }
+.c-header__headline { position: absolute; left: $hspace*3; top: $vspace; font-size: $font-size-xlarge; font-weight: bold; color: #fff; }
 
-.c-navbar { max-width: 600px; height: 20px; margin: 0 auto; padding: $vspace $hspace*2; }
-.c-navbar__section { display: flex; flex-wrap: wrap; }
-.c-navbar__section__item { width: calc(20% - #{$hspace}*2); position: relative; margin: 0 $hspace/2; padding: $vspace/2 $hspace/2; font-size: $font-size-small; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; transition: background-color .5s ease-in-out; 
+.c-header__navbar { max-width: 600px; height: 20px; margin: 0 auto; padding: $vspace $hspace*2; }
+.c-header__navbar__section { display: flex; flex-wrap: wrap; }
+.c-header__navbar__section__item { width: calc(20% - #{$hspace}*2); position: relative; margin: 0 $hspace/2; padding: $vspace/2 $hspace/2; font-size: $font-size-small; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; transition: background-color .5s ease-in-out; 
     &:hover { background-color: #f9f398; }
 }
-.c-navbar__section__item:hover .c-navbar__section__item__sub { position: relative; transform: translate(0, 10px); opacity: 1; visibility: visible; }
-.c-navbar__section__item__sub { position: absolute; margin-bottom: $vspace/2; opacity: 0; visibility: hidden; border-radius: 5px; transition: all .3s ease-in-out; }
-.c-navbar__section__item__sub__link { margin-bottom: $vspace/4; 
+.c-header__navbar__section__item.isActive { background-color: #f9f398; }
+.c-header__navbar__section__item:hover .c-header__navbar__section__item__sub { position: relative; transform: translate(0, 10px); opacity: 1; visibility: visible; }
+.c-header__navbar__section__item__sub { position: absolute; margin-bottom: $vspace/2; opacity: 0; visibility: hidden; border-radius: 5px; transition: all .3s ease-in-out; }
+.c-header__navbar__section__item__sub.isVisible { position: relative; transform: translate(0, 10px); opacity: 1; visibility: visible; }
+.c-header__navbar__section__item__sub__link { margin-bottom: $vspace/4; 
     a { letter-spacing: 0; color: #000; text-decoration: none;
         &:hover { color: blue; }
     }
 }
+.c-header__btn { display: inline-block; position: absolute; right: $hspace*3; top: $vspace; }
