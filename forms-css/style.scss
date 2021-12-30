@@ -1,0 +1,28 @@
+@import 'reset';
+
+$hspace: 20px;
+$vspace: 20px;
+
+$font-size: 16px;
+$font-size-xsmall: 12px;
+$font-size-small: 14px;
+$font-size-medium: 18px;
+$font-size-large: 26px;
+
+body { background-color: rgb(241, 237, 237); }
+
+.o-wrap { max-width: 330px; margin: 0 auto; }
+
+.c-form { margin-top: $vspace*3; padding: $vspace*2 $hspace*1.5; border: 1px solid #000; text-align: center; background-color: #fff; }
+.c-form__header { margin: 0 $hspace $vspace; }
+.c-form__header__headline { margin-bottom: $vspace; font-size: $font-size-large; }
+.c-form__header__teaser { font-size: $font-size; font-weight: lighter; line-height: 1.2; }
+.c-form__input { margin-bottom: $vspace; }
+.c-form__input__info {}
+.c-form__input__info__item { width: 100%; margin-bottom: $vspace*1.5; text-align: left;
+    label { display: block; margin-bottom: $vspace/2; text-transform: capitalize; }
+    input { display: block; width: 100%; height: 30px; margin-bottom: $vspace/4; padding: 0 $hspace/4; font-size: $font-size; }
+    p { font-size: $font-size-xsmall; }
+}
+.c-form__input__info__item__btn { width: 100%; padding: $vspace/2 0; font-size: $font-size-medium; text-align: center; text-transform: capitalize; color: #fff; background-color: #0077c5; border: none; border-radius: 4px; }
+.c-form__terms { font-size: $font-size-small; line-height: 1.2; font-style: italic; }

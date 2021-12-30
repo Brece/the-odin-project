@@ -1,0 +1,135 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #f1eded;
+}
+
+.o-wrap {
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+.c-form {
+  margin-top: 60px;
+  padding: 40px 30px;
+  border: 1px solid #000;
+  text-align: center;
+  background-color: #fff;
+}
+
+.c-form__header {
+  margin: 0 20px 20px;
+}
+
+.c-form__header__headline {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.c-form__header__teaser {
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 1.2;
+}
+
+.c-form__input {
+  margin-bottom: 20px;
+}
+
+.c-form__input__info__item {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.c-form__input__info__item label {
+  display: block;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.c-form__input__info__item input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 5px;
+  padding: 0 5px;
+  font-size: 16px;
+}
+
+.c-form__input__info__item p {
+  font-size: 12px;
+}
+
+.c-form__input__info__item__btn {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #0077c5;
+  border: none;
+  border-radius: 4px;
+}
+
+.c-form__terms {
+  font-size: 14px;
+  line-height: 1.2;
+  font-style: italic;
+}
+/*# sourceMappingURL=style.css.map */
