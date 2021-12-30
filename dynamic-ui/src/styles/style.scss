@@ -64,3 +64,21 @@ body { box-sizing: border-box; }
     .c-sidebar__option__item__form input { width: 0; height: 0; opacity: 0; visibility: hidden; }
     .c-sidebar__option__item__title { width: 0; height: 0; opacity: 0; visibility: hidden; }
 }
+
+
+// Image Slider
+
+.c-slider { max-width: 850px; height: 350px; margin: 0 auto; background-color: rgb(149, 250, 149); }
+.c-slider__content { display: flex; flex-direction: row; width: 100%; height: 85%; 
+    &:hover { cursor: pointer; }
+}
+.c-slider__content__arrow { position: relative; width: 20%; background-color: rgb(133, 133, 236); }
+.c-slider__content__arrow__left { position: absolute; right: $hspace; top: 50%; transform: translate(0, -50%); }
+.c-slider__content__arrow__right { position: absolute; left: $hspace; top: 50%; transform: translate(0, -50%); }
+.c-slider__content__img { width: 80%; background-color: rgb(245, 132, 132); }
+.c-slider__nav { width: 100%; height: 15%; display: flex; flex-direction: row; justify-content: center; align-items: center; background-color: #f9f398; }
+.c-slider__nav__dot { position: relative; width: 16px; height: 16px; border: 2px solid red; margin: 0 $hspace/2; border-radius: 50%; }
+.c-slider__nav__dot__fill { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; border-radius: 50%; }
+.c-slider__nav__dot.isVisible {
+    .c-slider__nav__dot__fill { background-color: red; }
+}
