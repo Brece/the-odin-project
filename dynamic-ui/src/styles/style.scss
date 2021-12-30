@@ -68,16 +68,22 @@ body { box-sizing: border-box; }
 
 // Image Slider
 
-.c-slider { max-width: 850px; height: 350px; margin: 0 auto; background-color: rgb(149, 250, 149); }
-.c-slider__content { display: flex; flex-direction: row; width: 100%; height: 85%; 
+.c-slider { max-width: 850px; height: 350px; margin: 0 auto $vspace*6; background-color: rgb(149, 250, 149); }
+.c-slider__content { display: flex; flex-direction: row; width: 100%; height: 85%; }
+.c-slider__content__arrow { position: relative; width: 60px; background-color: rgb(133, 133, 236); }
+.c-slider__content__arrow__box { position: absolute; width: 40px; height: 40px; border-radius: 50%; text-align: center; transform: translate(0, -50%); transition: background-color .3s ease-in-out;
+    &:hover { cursor: pointer; background-color: #f9f398; }
+}
+.c-slider__content__arrow__box--left { right: $hspace; top: 50%; }
+.c-slider__content__arrow__box--right { left: $hspace; top: 50%; }
+.c-slider__content__arrow__box i { position: relative; top: 50%; transform: translateY(-50%); }
+.c-slider__content__slider { width: calc(100% - 120px); background-color: rgb(245, 132, 132); overflow: hidden; }
+.c-slider__content__slider__img { display: flex; flex-direction: row; }
+.c-slider__content__slider__img img { width: 730px; }
+.c-slider__nav { width: 100%; height: 15%; display: flex; flex-direction: row; justify-content: center; align-items: center; background-color: #f9f398; }
+.c-slider__nav__dot { position: relative; width: 16px; height: 16px; border: 2px solid red; margin: 0 $hspace/2; border-radius: 50%;
     &:hover { cursor: pointer; }
 }
-.c-slider__content__arrow { position: relative; width: 20%; background-color: rgb(133, 133, 236); }
-.c-slider__content__arrow__left { position: absolute; right: $hspace; top: 50%; transform: translate(0, -50%); }
-.c-slider__content__arrow__right { position: absolute; left: $hspace; top: 50%; transform: translate(0, -50%); }
-.c-slider__content__img { width: 80%; background-color: rgb(245, 132, 132); }
-.c-slider__nav { width: 100%; height: 15%; display: flex; flex-direction: row; justify-content: center; align-items: center; background-color: #f9f398; }
-.c-slider__nav__dot { position: relative; width: 16px; height: 16px; border: 2px solid red; margin: 0 $hspace/2; border-radius: 50%; }
 .c-slider__nav__dot__fill { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; border-radius: 50%; }
 .c-slider__nav__dot.isVisible {
     .c-slider__nav__dot__fill { background-color: red; }
