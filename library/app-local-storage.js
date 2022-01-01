@@ -15,13 +15,14 @@ let myLibrary = [];
 document.addEventListener("DOMContentLoaded", showDisplay);
 
 submit.addEventListener("click", function(e) {
-    e.preventDefault();
-    if(title.value && author.value && pages.value) {
-        addBookToLibrary();
-        title.value = "";
-        author.value = "";
-        pages.value = "";
+    if (!titleVal()) {
+        e.preventDefault();
     }
+
+    // addBookToLibrary();
+    // title.value = "";
+    // author.value = "";
+    // pages.value = "";
 });
 
 function Book(title, author, pages, read, id) {
@@ -32,8 +33,26 @@ function Book(title, author, pages, read, id) {
     this.id = id;
 }
 
+function titleVal() {
+    title.addEventListener("input", () => {
+        if (title.validity.valueMissing) {
+            title.setCustomValidity("Please enter a book title.");
+            title.reportValidity;
+            console.log(title.validationMessage);
+            return false;
+        } else {
+            title.setCustomValidity("");
+            return true;
+        }
+    })
+}
+
 function addBookToLibrary() {
     let bookId = new Date().getTime();
+
+    // TODO 
+    // form validation ckeck
+    
     let book = new Book(title.value, author.value, pages.value, isRead.value, bookId);
 
     localStorage.setItem(bookId, JSON.stringify(book));

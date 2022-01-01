@@ -12,15 +12,15 @@
 <body>
     <form class="c-form">
         <label for="title" class="c-form__label">Book Title:</label>
-        <input type="text" id="title" class="c-form__input"><br><br>
+        <input type="text" id="title" class="c-form__input" required><br><br>
         <label for="author" class="c-form__label">Author:</label>
         <input type="text" id="author" class="c-form__input"><br><br>
         <label for="pages" class="c-form__label">Number of Pages:</label>
-        <input type="text" id="pages" class="c-form__input"><br><br>
+        <input type="number" id="pages" class="c-form__input" required min="1"><br><br>
         <label for="isRead">Aleady read:</label>
         <select id="isRead">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
+            <option value="true" required>Yes</option>
+            <option value="false" required>No</option>
         </select><br><br>
         <button type="submit" id="submit" class="c-form__btn">New Book</button>
     </form>
@@ -38,7 +38,7 @@
 
     </section>
 
-    <script src="app-class.js"></script>
+    <script src="app-local-storage.js"></script>
 </body>
 
 </html>
