@@ -1,0 +1,6 @@
+.o-wrap { display: flex; flex-direction: row; flex-wrap: wrap; margin-bottom: 30px; }
+
+#text { margin-right: 20px; }
+.c-btn { height: 40px; }
+.c-image { width: 50%; }
+.c-error { color: red; font-size: 24px; font-weight: bold; }
