@@ -10,17 +10,14 @@ btn.addEventListener('click', function(e) {
     }
 });
 
-function loadImage(search) {
-    return fetch(`https://api.giphy.com/v1/gifs/translate?api_key=zcsDt37h7nEVAe3YpEOd6Kgse2Suv0oV&s=${search}`, {mode: 'cors'})
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(response) {
-        image.src = response.data.images.original.url;
+async function loadImage(search) {
+    try {
+        const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=zcsDt37h7nEVAe3YpEOd6Kgse2Suv0oV&s=${search}`, {mode: 'cors'});
+        const data = await response.json();
+        image.src = data.data.images.original.url;
         errMsg.textContent = '';
-    })
-    .catch(function(err) {
+    } catch (err) {
         errMsg.textContent = `We couldn't find any images for your search request`;
         console.error(err);
-    })
+    }
 }
