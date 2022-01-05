@@ -1,0 +1,38 @@
+@import "reset";
+
+$hspace: 20px;
+$vspace: 20px;
+
+* { box-sizing: border-box; }
+
+body { background-color: #f8fbeb; }
+
+.o-wrap { max-width: 700px; margin: 0 auto; }
+
+#header { position: relative; width: 100%; margin-bottom: $vspace*3; padding: $vspace 0; background-color: rgb(254, 155, 155); }
+#header::before { position: absolute; top: 70px; left: 0; right: 0; content: ''; width: 100%; height: 2px; background-color: #fff; }
+#header:after { position: absolute; top: 75px; left: 0; right: 0; content: ''; width: 100%; height: 2px; background-color: #fff; }
+
+.c-search { margin-bottom: $vspace*2; }
+.c-search__input { width: 250px; margin-right: $hspace; padding: $vspace/2 $hspace; border: 1px solid #000; border-radius: 3px; background-color: #fff; }
+.c-search__input:invalid { border-color: red; }
+.c-search__btn { padding: $vspace/2 $hspace; font-size: 14px; border: 1px solid #000; border-radius: 3px; transition: background-color .3s ease-in-out;
+    &:hover { cursor: pointer; }
+}
+.c-search__btn--input { margin-right: $hspace; background-color: #a0f48b;
+    &:hover { background-color: #caf466; }
+}
+.c-search__btn--random { background-color: #00ffff;
+    &:hover { background-color: #00e8ff;}
+}
+
+.c-category { display: flex; flex-direction: row; flex-wrap: wrap; }
+.c-category__item { width: 20%; text-transform: capitalize; }
+
+.c-result {}
+.c-result__headline { width: 100%; margin-bottom: $vspace; text-transform: uppercase; font-size: 20px; font-weight: bold; text-align: center; }
+.c-result__cards { display: flex; flex-direction: row; flex-wrap: wrap; margin-left: -$hspace; margin-right: -$hspace; }
+.c-result__cards__item { width: calc(50% - #{$hspace}*2); margin: $vspace $hspace; padding: $vspace/2 $hspace $vspace; border: 1px solid #000; border-radius: 6px; background-color: #fff; }
+.c-result__cards__item__link { display: block; margin-bottom: $vspace; text-align: center; border-bottom: 1px solid #000; }
+.c-result__cards__item__link img { margin-bottom: $vspace/2; }
+.c-result__cards__item__text { line-height: 1.5; }

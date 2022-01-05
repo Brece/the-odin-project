@@ -1,0 +1,209 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f8fbeb;
+}
+
+.o-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 20px 0;
+  background-color: #fe9b9b;
+}
+
+#header::before {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+#header:after {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.c-search {
+  margin-bottom: 40px;
+}
+
+.c-search__input {
+  width: 250px;
+  margin-right: 20px;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.c-search__input:invalid {
+  border-color: red;
+}
+
+.c-search__btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.c-search__btn:hover {
+  cursor: pointer;
+}
+
+.c-search__btn--input {
+  margin-right: 20px;
+  background-color: #a0f48b;
+}
+
+.c-search__btn--input:hover {
+  background-color: #caf466;
+}
+
+.c-search__btn--random {
+  background-color: #00ffff;
+}
+
+.c-search__btn--random:hover {
+  background-color: #00e8ff;
+}
+
+.c-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.c-category__item {
+  width: 20%;
+  text-transform: capitalize;
+}
+
+.c-result__headline {
+  width: 100%;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.c-result__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.c-result__cards__item {
+  width: calc(50% - 20px*2);
+  margin: 20px 20px;
+  padding: 10px 20px 20px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.c-result__cards__item__link {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+.c-result__cards__item__link img {
+  margin-bottom: 10px;
+}
+
+.c-result__cards__item__text {
+  line-height: 1.5;
+}
+/*# sourceMappingURL=style.css.map */
