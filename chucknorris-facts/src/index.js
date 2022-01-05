@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 });
 
-async function init() {
-    await categoriesHtml(getCategories());
-
-    const data = await getSearchData('duck');
-    resultHtml(data, 'duck');
+function init() {
+    categoriesHtml(getCategories());
 }
