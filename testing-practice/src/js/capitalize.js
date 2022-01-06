@@ -1,0 +1,5 @@
+function capitalize() {
+
+}
+
+export { capitalize }
