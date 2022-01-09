@@ -1,4 +1,9 @@
 async function currentTempHtml(data, unit = 'metric') {
+
+    // ----------------------
+    console.log(data);
+    // ----------------------
+
     let temp = '--';
     let feel = '--';
     let humidity = '--';
@@ -31,7 +36,7 @@ async function currentTempHtml(data, unit = 'metric') {
         direction = data.wind.deg;
         currentCity = data.name;
     }
-    
+
     const section = document.createElement('section');
     section.classList = 'o-wrap c-current';
     section.innerHTML = `<h3 class="c-current__headline">Location: ${currentCity}</h3>
