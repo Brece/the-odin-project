@@ -4,28 +4,38 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch *js",
+    "test": "jest --watch",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "clearJest": "jest --clearCache"
   },
   "jest": {
-    "modulePaths": ["/shared/vendor/modules"],
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
-
+    "testMatch": [
+      "**/src/__test__/*test.js?(x)"
+    ],
+    "modulePaths": [
+      "/shared/vendor/modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
-
-      "^react(.*)$": "<rootDir>/vendor/react-master$1",
-      "^config$": "<rootDir>/configs/app-config.js"
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.7",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.7",

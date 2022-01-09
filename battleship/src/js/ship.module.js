@@ -1,19 +1,32 @@
-// length = number
+import { SHIP_LENGTH } from './helpers';
 // hit = object with coordinates?
-// sunk = boolean
 // keep track of ship coordinates
 
-function ship(length) {
+
+function createShip(type) {
+    const id = type;
+    const length = SHIP_LENGTH[type];
+    let direction = 'horizontal';
+    let hits = Array(length).fill(false);
+
+    const getDirection = () => direction;
+    const changeDirection = () => {
+        return direction === 'horizontal' ? (direction = 'vertical') : (direction = 'horizontal');
+    }
+    const hit = (i) => hit[i] = true;
+    const getHits = () => hits;
+
+    const isSunk = () => hits.every((hit) => hit === true);
+
     return {
-        length: length,
-        hit: function (num) {
-            // num marks the position that is hit
-        },
-        isSunk: function () {
-            // based on length and positions hit
-            // sum of hit positions = ship.length
-        }
+        id,
+        length,
+        hit,
+        getHits,
+        getDirection,
+        changeDirection,
+        isSunk
     }
 }
 
-export { ship }
+export { createShip }
