@@ -7,16 +7,16 @@ function createShip(type) {
     const id = type;
     const length = SHIP_LENGTH[type];
     let direction = 'horizontal';
-    let hits = Array(length).fill(false);
+    let hits = 0;
 
     const getDirection = () => direction;
     const changeDirection = () => {
         return direction === 'horizontal' ? (direction = 'vertical') : (direction = 'horizontal');
     }
-    const hit = (i) => hit[i] = true;
+    const hit = () => hits++;
     const getHits = () => hits;
 
-    const isSunk = () => hits.every((hit) => hit === true);
+    const isSunk = () => hits === length;
 
     return {
         id,

@@ -14,7 +14,6 @@ import { SHIP_TYPES, SHIP_LENGTH } from './helpers';
 const REQUIRED_NUMBER_OF_SHIPS = 10;
 const PLAYER_NUMBER_OF_SHIPS = 5;
 
-
 function gameboard() {
     // game grid
     let board = _createGrid();
@@ -29,28 +28,46 @@ function gameboard() {
     return board;
 }
 
-function _createGrid(size = 10) {
-    const numberOfCells = size * size;
+function _createGrid() {
+    const numberOfCells = 100;
     let grid = Array(numberOfCells).fill('')
-        .map((cell) => cell = { hasShip: false, isHit: false });
+        .map((cell) => cell = { isHit: false });
         
     return grid;
 }
 
-function _placeShip(typeIndex, startPoint, board) {
-    debugger
+function _placeShip(typeIndex, startPos, board) {
     let ship = createShip(SHIP_TYPES[typeIndex]);
 
-    for (let i = 0; i < ship.length; i++) {
-        if (ship.getDirection() === 'horizontal') {
-            // TODO: check for edge cases
-            board[startPoint + i].hasShip = true;
-        } else {
-            // TODO: check for edge cases
-            board[startPoint + (10 * i)].hasShip = true;
-        }
-    }
+    _checkBorder(ship, startPos, board);
+    
     return board;
 }
 
-export { gameboard }
+// bind mouse cursor to first ship position as starting point horizontally and vertically;
+// only need to check for edge cases on the right and bottom 
+function _checkBorder(ship, startPos, board) {
+    let length = ship.length;
+    let rightBorder = Math.ceil((startPos + 0.01)/10) * 10 - 1;
+    let bottomBorder = 100;
+
+    if (ship.getDirection() === 'horizontal') {
+        if (startPos + (length - 1) <= rightBorder) {
+            for (let i = 0; i < length; i++) {
+                board[startPos + i ]['ship'] = ship;
+            }
+        } else {
+            throw new Error('Invalid horizontal placement.');
+        }
+    } else {
+        if (startPos + ((length - 1) * 10) < bottomBorder) {
+            for (let i = 0; i < length; i++) {
+                board[startPos + (i * 10) ]['ship'] = ship;
+            }
+        } else {
+            throw new Error('Invalid vertical placement.');
+        }
+    }
+}
+
+export { gameboard, _placeShip, _createGrid }
