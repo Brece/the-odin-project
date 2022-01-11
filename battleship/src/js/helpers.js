@@ -14,10 +14,6 @@ const SHIP_LENGTH = {
     destroyer: 2
 };
 
-const _randomSize = (size = 10) => Math.floor(Math.random() * size);
+const randomPos = () => Math.floor(Math.random() * 100);
 
-const randomCoord = (size = 10) => {
-    return { x: _randomSize(size), y: _randomSize(size) }
-};
-
-export { SHIP_TYPES, SHIP_LENGTH, randomCoord }
+export { SHIP_TYPES, SHIP_LENGTH, randomPos }

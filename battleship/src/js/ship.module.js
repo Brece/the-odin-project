@@ -1,22 +1,22 @@
-import { SHIP_LENGTH } from './helpers';
+import { SHIP_LENGTH, SHIP_TYPES } from './helpers';
 // hit = object with coordinates?
 // keep track of ship coordinates
 
 
-function createShip(type) {
-    const id = type;
-    const length = SHIP_LENGTH[type];
+function createShip(typeIndex) {
+    const id = SHIP_TYPES[typeIndex];
+    const length = SHIP_LENGTH[id];
     let direction = 'horizontal';
     let hits = 0;
 
-    const getDirection = () => direction;
-    const changeDirection = () => {
+    function getDirection () { return direction };
+    function changeDirection () {
         return direction === 'horizontal' ? (direction = 'vertical') : (direction = 'horizontal');
     }
-    const hit = () => hits++;
-    const getHits = () => hits;
+    function hit () { hits++ };
+    function getHits () { return hits };
 
-    const isSunk = () => hits === length;
+    function isSunk () { return hits === length };
 
     return {
         id,
