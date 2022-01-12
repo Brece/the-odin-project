@@ -56,4 +56,68 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.o-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.isHit {
+  background-color: orange;
+}
+
+.hasShip {
+  background-color: red;
+}
+
+.c-header {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 60px;
+  background-color: antiquewhite;
+}
+
+.c-gameboard {
+  margin: 0 -40px;
+}
+
+.c-gameboard__player {
+  display: inline-block;
+  width: calc(50% - 82px);
+  margin: 0 40px;
+  border: 1px solid #000;
+}
+
+.c-gameboard__player__headline {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.c-gameboard__player__board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.c-gameboard__player__board__box {
+  width: 10%;
+  height: 35px;
+  border: 1px solid #000;
+  background-color: antiquewhite;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.c-gameboard__player__board__box:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=styles.css.map */

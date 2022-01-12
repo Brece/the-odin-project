@@ -11,9 +11,6 @@ import { SHIP_TYPES, SHIP_LENGTH } from './helpers';
 //      verticalTopBorder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
 //      verticalBottomBorder = [90, 91, 92, 93, 94, 95, 96, 97, 98, 99] 
 
-const REQUIRED_NUMBER_OF_SHIPS = 10;
-const PLAYER_NUMBER_OF_SHIPS = 5;
-
 function gameboard() {
     // game grid
     const numberOfCells = 100;
@@ -36,7 +33,7 @@ function gameboard() {
         
         return playerBoard;
     }
-    // example: setShip(0, 0, playerBoard);
+    // example: setShip(0, 0);
 
     // bind mouse cursor to first ship position as starting point horizontally and vertically;
     // only need to check for edge cases on the right and bottom 
@@ -50,6 +47,8 @@ function gameboard() {
                 for (let i = 0; i < length; i++) {
                     board[startPos + i ]['ship'] = ship;
                 }
+                //TODO:
+                // helper keeps track of all ships and their status to determine how many ships has been destroyed and if the game is over
             } else {
                 throw new Error('Invalid horizontal placement.');
             }
@@ -58,6 +57,8 @@ function gameboard() {
                 for (let i = 0; i < length; i++) {
                     board[startPos + (i * 10) ]['ship'] = ship;
                 }
+                //TODO:
+                // helper keeps track of all ships and their status to determine how many ships has been destroyed and if the game is over
             } else {
                 throw new Error('Invalid vertical placement.');
             }
@@ -69,11 +70,13 @@ function gameboard() {
 
         if (!hitPosition.isHit) {
             hitPosition.isHit = true;
+            // TODO:
             // display on gameboard with different background color
             
             if (hitPosition.ship !== undefined) {
                 let ship = hitPosition.ship;
                 ship.hit();
+                // TODO:
                 // display on gameboard with 'X'
                 
                 _isSunk(ship);
@@ -90,11 +93,15 @@ function gameboard() {
 
     function _isSunk(ship) {
         if (ship.isSunk()) {
+            // TODO:
             // give feedback on display that that ship has been shot down
+            return true;
         }
+
+        return false;
     }
 
-    return { getBoard, setShip, receiveAttack, _isSunk };
+    return { getBoard, setShip, receiveAttack };
 }
 
 

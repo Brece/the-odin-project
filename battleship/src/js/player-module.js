@@ -8,7 +8,11 @@ function player() {
     let destroyedShips = 0;
 
     function getBoard() {
-        return board;
+        return board.getBoard();
+    }
+
+    function getActive() {
+        return active;
     }
 
     function getNumberOfShip() {
@@ -19,10 +23,10 @@ function player() {
         return numberOfShips === destroyedShips;
     }
 
-    function setShip() {
-        //TODO
+    function setShip(position) {
+        // TODO: position
         if (numberOfShips < 5) {
-            board.setShip();
+            board.setShip(numberOfShips, position);
             numberOfShips++;
             return true;
         }
@@ -45,7 +49,11 @@ function player() {
         }
     }
 
-    return { getBoard, getNumberOfShip, setShip, attack, changeActive, checkDefeat }
+    function destroyShip() {
+        destroyedShips++;
+    }
+
+    return { getBoard, getActive, getNumberOfShip, setShip, attack, changeActive, checkDefeat, destroyShip }
 }
 
 function nonPlayer() {
@@ -56,6 +64,10 @@ function nonPlayer() {
 
     function getBoard() {
         return board;
+    }
+
+    function getActive() {
+        return active;
     }
 
     function getNumberOfShip() {
@@ -94,7 +106,11 @@ function nonPlayer() {
         }
     }
 
-    return { getBoard, getNumberOfShip, setFleet, attack, changeActive, checkDefeat }
+    function destroyShip() {
+        destroyedShips++;
+    }
+
+    return { getBoard, getActive, getNumberOfShip, setFleet, attack, changeActive, checkDefeat, destroyShip }
 }
 
 export { player, nonPlayer }
