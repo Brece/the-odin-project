@@ -1,3 +1,37 @@
 @import "reset";
 
 * { box-sizing: border-box; }
+
+.c-gameboard { display: flex; }
+.c-gameboard__item { width: 400px; height: 400px; margin-right: 40px; display: flex; flex-wrap: wrap; }
+.c-gameboard__item--user {  background-color: aquamarine; }
+.c-gameboard__item--computer { background-color: orange; }
+.c-gameboard__item div { width: 40px; height: 40px; border: 1px solid #000; }
+
+// .c-action {}
+
+.c-display { width: 400px; height: 400px; background-color: greenyellow; }
+.c-display--vertical { display: flex; }
+.c-display__ship { display: flex; margin: 20px; }
+.c-display__ship--destroyer { width: 80px; height: 40px; background-color: antiquewhite; }
+.c-display__ship--submarine { width: 120px; height: 40px; background-color: red; }
+.c-display__ship--cruiser { width: 120px; height: 40px; background-color: yellow; }
+.c-display__ship--battleship { width: 160px; height: 40px; background-color: pink; }
+.c-display__ship--carrier { width: 200px; height: 40px; background-color: purple; }
+
+.c-display__ship div { width: 40px; height: 40px; }
+
+.destroyer { background-color: antiquewhite; }
+.destroyer--vertical { display: flex; flex-wrap: wrap; width: 40px; height: 80px; }
+
+.submarine { background-color: red; }
+.submarine--vertical { display: flex; flex-wrap: wrap; width: 40px; height: 120px; }
+
+.cruiser { background-color: yellow; }
+.cruiser--vertical { display: flex; flex-wrap: wrap; width: 40px; height: 120px;  }
+
+.battleship { background-color: pink; }
+.battleship--vertical { display: flex; flex-wrap: wrap; width: 40px; height: 160px; }
+
+.carrier { background-color: purple; }
+.carrier--vertical { display: flex; flex-wrap: wrap; width: 40px; height: 200px; }

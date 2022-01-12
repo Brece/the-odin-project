@@ -1,3 +1,6 @@
 import './css/styles.css';
+import { initHTML } from './js/html-module';
 
-console.log("xxx yyy");
+document.addEventListener('DOMContentLoaded', () => {
+    initHTML();
+});
