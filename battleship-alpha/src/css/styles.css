@@ -57,6 +57,20 @@ table {
           box-sizing: border-box;
 }
 
+.isHit {
+  padding: 10px;
+  font-size: 24px;
+  background-color: #000;
+  color: #fff;
+}
+
+.isMissed {
+  padding: 10px;
+  font-size: 24px;
+  background-color: #fff;
+  color: #000;
+}
+
 .c-gameboard {
   display: -webkit-box;
   display: -ms-flexbox;

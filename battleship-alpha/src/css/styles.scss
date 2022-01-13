@@ -2,6 +2,9 @@
 
 * { box-sizing: border-box; }
 
+.isHit { padding: 10px; font-size: 24px; background-color: #000; color: #fff; }
+.isMissed { padding: 10px; font-size: 24px; background-color: #fff; color:  #000; }
+
 .c-gameboard { display: flex; }
 .c-gameboard__item { width: 400px; height: 400px; margin-right: 40px; display: flex; flex-wrap: wrap; }
 .c-gameboard__item--user {  background-color: aquamarine; }

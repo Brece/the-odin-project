@@ -5,5 +5,23 @@
     <title>Todo-List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="main.js"></script></head>
   <body>
+    <section class="c-gameboard">
+      <div class="c-gameboard__user"></div>
+      <div class="c-gameboard__computer"></div>
+    </section>
+
+    <section class="c-action">
+      <button class="c-action__start c-btn">Start Game</button>
+      <button class="c-action__rotate c-btn">Rotate Your Ship</button>
+      <h3 class="c-action__turn">Your Turn</h3>
+      <h3 class="c-action__info"></h3>
+    </section>
+
+    <section class="c-display">
+      <div class="c-display__ship c-display__ship--destroyer" draggable="true">
+        <div data-id="destroyer-0"></div>
+        <div data-id="destroyer-1"></div>
+      </div>
+    </section>
   </body>
 </html>
