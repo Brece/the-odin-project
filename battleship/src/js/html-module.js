@@ -1,9 +1,15 @@
-function initHTML() {
-    // header
-    const header = document.createElement('header');
-    header.className = 'o-wrap c-header';
-    header.innerHTML = `<button type="button" class="c-header__btn">Start Game</button>`;
+function initHeader() {
+  const header = document.createElement('header');
+  header.className = 'o-wrap c-header';
+  header.innerHTML = `<button type="button" class="c-header__btn">Start Game</button>`;
+  document.body.appendChild(header);
 
+  // start game and render gameboard
+  const startBtn = document.querySelector('.c-header__btn');
+  startBtn.addEventListener('click', _initBoard);
+}
+
+function _initBoard() {
     // gameboard section
     const container = document.createElement('div');
     container.className = 'o-wrap';
@@ -18,7 +24,6 @@ function initHTML() {
   </div>
   </section>`
 
-    document.body.appendChild(header);
     document.body.appendChild(container);
 
     // gameboard boxes
@@ -42,4 +47,4 @@ function _initBoxes() {
 }
 
 
-export { initHTML }
+export { initHeader }

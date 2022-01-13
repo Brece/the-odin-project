@@ -1,5 +1,5 @@
 import './css/styles.css';
-import { initHTML } from './js/html-module';
+import { initHeader } from './js/html-module';
 import { initGame } from './js/game-module';
 import { gameboard } from './js/gameboard-module';
 import { createShip } from './js/ship.module';
@@ -21,6 +21,5 @@ import { player, nonPlayer } from './js/player-module';
 // console.log({pc, npc});
 
 document.addEventListener('DOMContentLoaded', () => {
-    initHTML();
     initGame();
 });
