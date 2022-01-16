@@ -78,8 +78,9 @@ class App extends React.Component {
 
   handleDelete(id) {
     this.setState((state) => {
-      let newState = state.tasks.filter((task) => task.id !== id);
-      return { tasks: newState }
+      let newTasksArray = state.tasks.filter((task) => task.id !== id);
+      localStorage.setItem('tasks',JSON.stringify(newTasksArray));
+      return { tasks: newTasksArray }
     });
   }
 
