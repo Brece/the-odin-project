@@ -73,6 +73,7 @@ class App extends React.Component {
       input: ''
       }
     );
+    localStorage.clear();
   }
 
   handleDelete(id) {
@@ -93,14 +94,14 @@ class App extends React.Component {
 
   render() {
     return (
-    <div>
-      <form onSubmit={this.onSubmitTask}>
+    <div className="o-wrap">
+      <form onSubmit={this.onSubmitTask} className="c-form">
         <label htmlFor="taskInput">Enter Task:</label>
         <input type='text' id="taskInput" placeholder="Enter your task..." value={this.state.input} onChange={this.handleInput} />
-        <button type='submit'>Add Task</button>
+        <button type='submit' className="c-btn c-form__btn">Add Task</button>
       </form>
         <Overview tasks={this.state.tasks} handleDelete={this.handleDelete} handleEdit={this.handleEdit} />
-        <button type='button' onClick={this.resetState}>Delete all tasks</button>
+        <button type='button' onClick={this.resetState} className="c-btn c-btn__delete-all">Delete all tasks</button>
     </div>
   )}
 }

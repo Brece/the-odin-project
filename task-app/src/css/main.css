@@ -56,4 +56,104 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.o-wrap {
+  max-width: 600px;
+  margin: 60px auto 0;
+  padding: 20px 40px;
+  color: #5b5b5b;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.c-btn {
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.c-btn:hover {
+  cursor: pointer;
+}
+
+.c-form {
+  margin-bottom: 40px;
+}
+
+.c-form label {
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.c-form input {
+  margin-right: 20px;
+  padding: 5px 10px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.c-form__btn {
+  background-color: #a5f477;
+}
+
+.c-form__btn:hover {
+  background-color: #8bf44e;
+}
+
+.c-btn__delete-all {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f97c8f;
+  color: #fff;
+}
+
+.c-btn__delete-all:hover {
+  background-color: #f9435e;
+}
+
+.c-overview {
+  margin-bottom: 30px;
+}
+
+.c-overview li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  background-color: #fcf9d4;
+}
+
+.c-overview p {
+  width: 50%;
+}
+
+.c-btn__delete-one {
+  background-color: #f97c8f;
+  color: #fff;
+}
+
+.c-btn__delete-one:hover {
+  background-color: #f9435e;
+}
+
+.c-btn__edit {
+  background-color: #f4f4a6;
+}
+
+.c-btn__edit:hover {
+  background-color: #f2f252;
+}
 /*# sourceMappingURL=main.css.map */
