@@ -1,13 +1,14 @@
 import React from "react";
 import { Overview } from './components/Overview';
 import uniqid from 'uniqid';
+import './css/main.css';
 
 class App extends React.Component {
   constructor() {
     super();
     // TODO: use Map() instead of Array for tasks
     this.state = {
-      tasks: [],
+      tasks: localStorage.length !== 0 ? JSON.parse(localStorage.getItem('tasks')) : [],
       input: '',
       edit: false,
       editId: '',
@@ -36,6 +37,7 @@ class App extends React.Component {
           }
           return task;
         });
+        localStorage.setItem('tasks', JSON.stringify(newTasksArray));
         
         return {
           tasks: newTasksArray,
@@ -52,8 +54,11 @@ class App extends React.Component {
 
     if (input !== '' && task === undefined) {
       this.setState((state) => {
+        const tasks = [...state.tasks, { id: state.id, input: state.input }];
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
         return {
-          tasks: [...state.tasks, { id: state.id, input: state.input }],
+          tasks: tasks,
           input: '',
           id: uniqid()
         }
