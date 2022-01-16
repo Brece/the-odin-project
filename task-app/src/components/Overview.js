@@ -2,18 +2,22 @@ import React from "react";
 
 class Overview extends React.Component {
 	render() {
-		let task = this.props.tasks.map((task) => {
-			let id = task.id;
+		let tasks = this.props.tasks;
 
-			return (
-				<li key={id.toString()}>
-					<p>Task: {task.input}</p>
-					<button type="button" onClick={ () => this.props.handleDelete(id) }>Delete task</button>
-				</li>
-			);
-		})
 		return (
-			<ol>{task}</ol>
+			<ul>
+				{tasks.map((task) => {
+					let id = task.id;
+
+					return (
+						<li key={id}>
+							<p>Task #{tasks.indexOf(task) + 1}: {task.input}</p>
+							<button type="button" onClick={ () => this.props.handleDelete(id) }>Delete task</button>
+              <button type="button" onClick={ () => this.props.handleEdit(id)}>Edit Task</button>
+						</li>
+					);
+				})}
+			</ul>
 		)
 	}
 }
