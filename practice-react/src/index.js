@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ExampleComponent } from './components/PropsSet-2';
+import Lifecycle from './Lifecycle';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ExampleComponent />
+    <Lifecycle />
   </React.StrictMode>,
   document.getElementById('root')
 );
