@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Lifecycle from './Lifecycle';
+import App from './components/Counter-hooks';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Lifecycle />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
