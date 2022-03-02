@@ -13,7 +13,7 @@ class Overview extends React.Component {
 						<li key={id}>
 							<p>Task #{tasks.indexOf(task) + 1}: {task.input}</p>
 							<button type="button" onClick={ () => this.props.handleDelete(id) } className="c-btn c-btn__delete-one">Delete task</button>
-              <button type="button" onClick={ () => this.props.handleEdit(id)}className="c-btn c-btn__edit">Edit Task</button>
+            				<button type="button" onClick={ () => this.props.handleEdit(id)}className="c-btn c-btn__edit">Edit Task</button>
 						</li>
 					);
 				})}
