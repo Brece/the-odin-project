@@ -1,0 +1,1 @@
+This is an assignment of TheOdinProject about API calls and display the received data in a presentable format.
