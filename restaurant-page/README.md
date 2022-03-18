@@ -1,0 +1,1 @@
+This small project is about creating a small website with dynamic content rendering using webpack.
