@@ -1,0 +1,1 @@
+This assignment is about learning the basics of testing with Jest.
