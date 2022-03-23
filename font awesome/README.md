@@ -1,0 +1,1 @@
+This is a template for local files needed to use Fontawesome offline.
