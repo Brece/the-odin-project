@@ -1,0 +1,1 @@
+This is a small assigment of TheOdinProject. Main objective was to create a calculator with a bit HTML/CSS and Javascript.
