@@ -1,0 +1,1 @@
+This is a small assignment of TheOdinProject. Main objective was to learn how to make an API call and display the received data.
