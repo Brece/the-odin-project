@@ -1,2 +1,1 @@
-
 This is a project is about form validation. It checks if the user's input is valid to be further processed.
