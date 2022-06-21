@@ -1,0 +1,25 @@
+{
+  "name": "basic-site-express",
+  "version": "1.0.0",
+  "description": "recreating node-basic-site with express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Brece"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Brece",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
