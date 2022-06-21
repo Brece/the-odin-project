@@ -24,6 +24,8 @@ app.get('/', (req, res) => {
 app.get('/:name', (req, res) => {
     let filepath = basePath + '/' + `${req.params.name}.html`;
 
+    /*
+    // error handling with node
     fs.readFile(filepath, (err, data) => {
         // file does not exist
         if (err) {
@@ -38,6 +40,14 @@ app.get('/:name', (req, res) => {
             // res.sendFile(filepath);
         }
     })
+    */
+    
+    res.sendFile(filepath);
+});
+
+// error handling with express
+app.use((err, req, res, next) => {
+    res.status(404).sendFile(basePath + '/' + '404.html')
 });
 
 app.listen(port);
